@@ -1,0 +1,42 @@
+html, body{
+	height: 100%;
+}
+body{
+	font-family: Arial;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+}
+li{
+	padding-left: 10px;
+}
+
+.Header{
+	display: flex;
+	justify-content: space-around;
+	background-color: #333;
+	color: white;
+	padding: 10px 0;
+}
+
+.Footer{
+	display: flex;
+	justify-content: center;
+	background-color: red;
+	color: white;
+	padding: 20px 0px;
+}
+
+.bottomBar{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.topBar{
+	display: flex;
+	justify-content: space-evenly;
+	list-style-type: none;
+	padding: 0 3px 0;
+	margin: 0;
+}
