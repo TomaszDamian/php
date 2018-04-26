@@ -5,5 +5,5 @@ function redirect($path){
 
 function view($viewLocation, $data = []){
 	extract($data);
-	require "views/$viewLocation.view.php";
+	require "app/views/$viewLocation.view.php";
 }
