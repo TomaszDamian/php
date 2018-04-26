@@ -1,5 +1,5 @@
 <?php 
-
+//namespace App\Core\Database;
 class Connection
 {
 	static function Make($config)

@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Core;
 class Router{
 	protected $routes = [
 		'GET' => [],
@@ -7,7 +7,9 @@ class Router{
 	];
 	public function direct($uri, $requestType){
 		if(array_key_exists($uri, $this->routes[$requestType])){
-			return $this->routes[$requestType][$uri];
+			return $this->callAction(
+				...explode('@',$this->routes[$requestType][$uri])
+			);
 		}
 
 		throw new Exception('no routes defined for this uri');
@@ -33,6 +35,15 @@ class Router{
 	 */
 	public function post($uri, $controller){
 		$this->routes['POST'][$uri] = $controller;
+	}
+
+	protected function callAction($controller, $action){
+		$AppPath = "App\Controllers\\{$controller}";
+		$controllerInstance = new $AppPath;
+		if(! method_exists($controllerInstance, $action)){
+			throw new Exception("{$controller} does not respond to the action {$action}");
+		}
+		return $controllerInstance->$action();
 	}
 
 	public static function load($files){

@@ -15,12 +15,12 @@
       </a>
       <a href="/about" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
         About
-      </a>
-      <a href="/about/culture" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-        About us
-      </a>
-      <a href="/contact" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white ">
+      </a> 
+      <a href="/contact" class="block mr-4 mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white ">
         Contact
+      </a>
+      <a href="/users" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+        Users
       </a>
     </div>
   </div>
