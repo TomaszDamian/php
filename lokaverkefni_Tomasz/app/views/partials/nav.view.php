@@ -14,11 +14,11 @@
       <a href="/Information" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
         Information
       </a> 
-      <a href="/contact" class="block mr-4 mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white ">
-        Contact
+      <a href="/PostCreate" class="block mr-4 mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white ">
+        Add new post
       </a>
-      <a href="/users" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
-        Users
+      <a href="/PostEdit" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+        Edit post
       </a>
     </div>
   </div>

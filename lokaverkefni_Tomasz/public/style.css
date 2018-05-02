@@ -1,12 +1,11 @@
-html, body .Blog{
-	height: 100%;
-	width: 100%;
+html, body {
+    margin: 0;
+    height: 100%;
 }
-body{
+.GreenBackGround{
 	background-color: #71ce7f;
 }
 .Blog{
-	width: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
