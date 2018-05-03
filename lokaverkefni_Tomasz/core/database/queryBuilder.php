@@ -28,7 +28,7 @@ class QueryBuilder
 			$statement->execute($value);
 		}
 		catch(PDOException $e){
-			die('Data could not be saved to the database');
+			die($e->getMessage());
 		}
 		
 	

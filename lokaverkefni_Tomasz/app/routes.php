@@ -7,4 +7,6 @@ $router->get("Sources", "PagesController@Sources");
 $router->get("MyBlogWall","PagesController@MyMainWall");
 $router->get("PostCreate","PostController@PostCreate");
 $router->get("PostEdit","PostController@PostEdit");
+
+$router->post("PostSave","PostController@PostBlog");
 $router->post("users","UsersController@store");

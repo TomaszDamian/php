@@ -7,7 +7,7 @@
 						<?=$blog->title?>
 					</div>
 					<p class="text-grey-darker text-base">
-						<?=$blog->body?>
+						<?=nl2br($blog->body)?>
 					</p>
 					<h6 class="ownerText"><?=$blog->owner?></h6>
 				</div>
