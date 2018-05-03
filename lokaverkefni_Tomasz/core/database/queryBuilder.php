@@ -25,12 +25,14 @@ class QueryBuilder
 		);
 		try{
 			$statement = $this->pdo->prepare($sql);
+			die(var_dump($statement));
 			$statement->execute($value);
 		}
 		catch(PDOException $e){
 			die($e->getMessage());
 		}
-		
-	
+	}
+	public function update($table, $value, $primaryKey){
+		$sql = "UPDATE $table SET $value='array_keys($value)'";
 	}
 }
