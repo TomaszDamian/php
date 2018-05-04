@@ -25,7 +25,6 @@ class QueryBuilder
 		);
 		try{
 			$statement = $this->pdo->prepare($sql);
-			die(var_dump($statement));
 			$statement->execute($value);
 		}
 		catch(PDOException $e){
@@ -33,6 +32,38 @@ class QueryBuilder
 		}
 	}
 	public function update($table, $value, $primaryKey){
-		$sql = "UPDATE $table SET $value='array_keys($value)'";
+		//$updatedPrimaryKey is now a array that looks like this ['id=:id'];
+		$updatePrimaryKey = array_map(function($key){
+			return "{$key}=:{$key}";
+		},array_keys($primaryKey));		
+		
+		//updates the vlues to the same format as the $updatePrimaryKey
+		$updatedValues = array_map(function($key){
+			return "{$key}=:{$key}";
+		},array_keys($value));
+
+		//turns the array to just a string that will look like "id=:id"
+		//and if there are more than one primary key it will look like this
+		//"id=:id AND PrimaryKey=:PrimaryKey"
+		$implodedPrimaryKey = implode(" AND ",$updatePrimaryKey);
+
+		$implodedValues = implode(" AND ", $updatedValues);
+
+		//making the actual sql command that should look like this
+		//"UPDATE blogs SET value=:value AND value2=:value2 WHERE id=:id"
+		$sql = sprintf("UPDATE %s SET %s WHERE %s",
+			$table,
+			$implodedValues,
+			$implodedPrimaryKey
+		);
+
+		//try executing return a exception if fails
+		try{
+			$statement = $this->pdo->prepare($sql);
+			$statement->execute($value);
+		}
+		catch(PDOException $e){
+			die($e->getMessage());
+		}		
 	}
 }
