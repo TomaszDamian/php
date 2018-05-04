@@ -60,7 +60,7 @@ class QueryBuilder
 		//try executing return a exception if fails
 		try{
 			$statement = $this->pdo->prepare($sql);
-			$statement->execute($value);
+			$statement->execute(array_merge($primaryKey,$value));
 		}
 		catch(PDOException $e){
 			die($e->getMessage());
