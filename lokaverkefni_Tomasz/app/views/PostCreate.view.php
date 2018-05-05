@@ -1,7 +1,7 @@
 <?php require 'partials/header.view.php'; ?>
 	<div class="Blog">	
 		<div class="w-2/3 mt-6 rounded overflow-hidden shadow-lg WhiteBackGround">
-			<form action="/PostSave" method="POST">
+			<form action="/PostCreate" method="POST">
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">
 						<input type="text" class="border" placeholder="Title" name="title">

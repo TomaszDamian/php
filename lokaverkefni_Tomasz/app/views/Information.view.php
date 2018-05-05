@@ -26,7 +26,7 @@
 					Contact Info:
 				</div>
 				<p class="text-grey-darker text-base">
-					<b>Phone:</b> 783-xxxx <br>
+					<b>Phone:</b> +354 783-xxxx <br>
 					<b>Email:</b> Example@Example.is <br>
 					<b>Hq:</b> Somewhere in Iceland 
 				</p>
